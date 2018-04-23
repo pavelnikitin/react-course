@@ -1,11 +1,11 @@
-var app = {
+const app = {
     title: 'Indecision App',
     subtiile: 'Put your life in the hands of a computer',
     option: ['one', 'two']
 
 };
  
-var template= (
+const template= (
     <div>
         <h1>{app.title}</h1>
         {app.subtiile && <p>{app.subtiile}</p>}
@@ -17,6 +17,27 @@ var template= (
     </div>
 );
 
- var appRoot = document.getElementById('app');
+let count = 0;
+
+const addOne = () => {
+    console.log('add One');
+};
+const minusOne = () => {
+    console.log('minus One');
+};
+const reset = () => {
+    console.log('reset');
+};
+
+const templateTwo = (
+    <div>
+        <h1>Count: {count} </h1>
+        <button onClick={addOne} >+1</button>
+        <button onClick={minusOne} >-1</button>
+        <button onClick={reset} >reset</button>      
+    </div>
+);
+
+ const appRoot = document.getElementById('app');
  
- ReactDOM.render(template, appRoot);
+ ReactDOM.render(templateTwo, appRoot);
